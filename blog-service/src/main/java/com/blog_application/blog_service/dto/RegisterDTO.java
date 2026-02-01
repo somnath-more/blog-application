@@ -1,0 +1,23 @@
+package com.blog_application.blog_service.dto;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class RegisterDTO {
+    private Long id;
+    @NotBlank(message = "Name cannot be blank")
+    private String name;
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Email is not valid")
+    private String email;
+    @NotBlank(message = "Password cannot be blank")
+    private String password;
+    private String about;
+    private String profilePhoto;
+}
