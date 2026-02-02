@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,4 +22,7 @@ public class RegisterDTO {
     private String password;
     private String about;
     private String profilePhoto;
+
+//    private List<PostDTO> posts;
+//    private List<CommentDTO> comments;
 }

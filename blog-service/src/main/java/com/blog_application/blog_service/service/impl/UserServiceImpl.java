@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -60,7 +61,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public RegisterDTO getUserByEmail(String email) {
-        User user=userRepository.findByEmail(email);
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new CustomException(
+                        String.format("User with email [%s] not found", email),
+                        HttpStatus.NOT_FOUND
+                ));
+
         return userMapper.convertToDto(user);
     }
 
