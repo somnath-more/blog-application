@@ -16,6 +16,6 @@ public class CommentDTO {
     @NotBlank(message = "Comment content cannot be empty")
     @Size(max = 500, message = "Comment must be under 500 characters")
     private String content;
-    private PostDTO post;
-    private RegisterDTO user;
+//    private PostDTO post;
+//    private RegisterDTO user;
 }
